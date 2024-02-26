@@ -27,7 +27,7 @@ export default function RootLayout({
       <body className={anton.className}>
         <main>
           <Container className="py-4">
-            <Suspense>{children}</Suspense>
+            {children}
           </Container>
         </main>
       </body>
