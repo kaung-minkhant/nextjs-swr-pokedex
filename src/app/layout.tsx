@@ -1,8 +1,9 @@
 import type { Metadata, Viewport } from "next";
 import { Anton } from "next/font/google";
-import 'bootstrap/dist/css/bootstrap.min.css'
+import "bootstrap/dist/css/bootstrap.min.css";
 import "./globals.css";
 import { Container } from "react-bootstrap";
+import { Suspense } from "react";
 
 const anton = Anton({ subsets: ["latin"], weight: ["400"] });
 
@@ -14,7 +15,7 @@ export const metadata: Metadata = {
 export const viewport: Viewport = {
   width: "device-width",
   initialScale: 1,
-}
+};
 
 export default function RootLayout({
   children,
@@ -25,7 +26,9 @@ export default function RootLayout({
     <html lang="en">
       <body className={anton.className}>
         <main>
-          <Container className="py-4">{children}</Container>
+          <Container className="py-4">
+            <Suspense>{children}</Suspense>
+          </Container>
         </main>
       </body>
     </html>
