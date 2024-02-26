@@ -22,8 +22,8 @@ export default function Home() {
       <Row xs={1} sm={2} lg={3} xl={4} className="g-4">
         {data?.results.map((result) => {
           return (
-            <Col>
-              <PokemonEntry name={result.name} key={'pokemon-'+result.name} />
+            <Col key={'pokemon-'+result.name}>
+              <PokemonEntry name={result.name}  />
             </Col>
           );
         })}
